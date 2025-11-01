@@ -1,6 +1,6 @@
 package oceanmod.atlantis.registries;
 
-public class ExtraRegistries {
+public class ExtraRegistriesAtl {
 
 
     public static void registerExtras() {

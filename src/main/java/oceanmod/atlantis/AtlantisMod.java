@@ -6,13 +6,13 @@ import necesse.inventory.recipe.Ingredient;
 import necesse.inventory.recipe.Recipe;
 import necesse.inventory.recipe.Recipes;
 import necesse.level.maps.biomes.Biome;
-import oceanmod.atlantis.registries.ExtraRegistries;
+import oceanmod.atlantis.registries.ExtraRegistriesAtl;
 
 @ModEntry
 public class AtlantisMod {
 
     public void init() {
-        ExtraRegistries.registerExtras();
+        ExtraRegistriesAtl.registerExtras();
 
     }
 

@@ -1,6 +1,6 @@
 package oceanmod.atlantis.registries;
 
-public class ObjectRegistry {
+public class ObjectRegistryAtl {
 
 
     public static void registerObjects() {

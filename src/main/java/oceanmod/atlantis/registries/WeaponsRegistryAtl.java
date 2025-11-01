@@ -1,6 +1,6 @@
 package oceanmod.atlantis.registries;
 
-public class WeaponsRegistry {
+public class WeaponsRegistryAtl {
 
 
     public static void registerWeapons() {

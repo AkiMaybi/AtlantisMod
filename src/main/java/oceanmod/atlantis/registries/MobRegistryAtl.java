@@ -1,6 +1,6 @@
 package oceanmod.atlantis.registries;
 
-public class MobRegistry {
+public class MobRegistryAtl {
 
 
     public static void registerMobs() {
