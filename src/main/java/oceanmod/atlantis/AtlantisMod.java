@@ -2,17 +2,19 @@ package oceanmod.atlantis;
 
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.*;
-import necesse.inventory.recipe.Ingredient;
-import necesse.inventory.recipe.Recipe;
-import necesse.inventory.recipe.Recipes;
-import necesse.level.maps.biomes.Biome;
-import oceanmod.atlantis.registries.ExtraRegistriesAtl;
+import oceanmod.atlantis.registries.*;
 
 @ModEntry
 public class AtlantisMod {
 
     public void init() {
         ExtraRegistriesAtl.registerExtras();
+        ItemRegistryAtl.registerItems();
+        MobRegistryAtl.registerMobs();
+        ObjectRegistryAtl.registerObjects();
+        TileRegistryAtl.registerTiles();
+        WeaponsRegistryAtl.registerWeapons();
+        BiomeRegistry.registerBiome("ocean", new OceanBiome().setGenerationWeight(2f), true );
 
     }
 
@@ -27,40 +29,21 @@ public class AtlantisMod {
 
     public void postInit() {
         // Add recipes
-        // Example item recipe, crafted in inventory for 2 iron bars
-        Recipes.registerModRecipe(new Recipe(
-                "exampleitem",
-                1,
-                RecipeTechRegistry.NONE,
-                new Ingredient[]{
-                        new Ingredient("ironbar", 2)
-                }
-        ).showAfter("woodboat")); // Show recipe after wood boat recipe
-        // Example sword recipe, crafted in iron anvil using 4 example items and 5 copper bars
-        Recipes.registerModRecipe(new Recipe(
-                "examplesword",
-                1,
-                RecipeTechRegistry.IRON_ANVIL,
-                new Ingredient[]{
-                        new Ingredient("exampleitem", 4),
-                        new Ingredient("copperbar", 5)
-                }
-        ));
         // Example staff recipe, crafted in workstation using 4 example items and 10 gold bars
-        Recipes.registerModRecipe(new Recipe(
-                "examplestaff",
-                1,
-                RecipeTechRegistry.WORKSTATION,
-                new Ingredient[]{
-                        new Ingredient("exampleitem", 4),
-                        new Ingredient("goldbar", 10)
-                }
-        ).showAfter("exampleitem")); // Show the recipe after example item recipe
+//        Recipes.registerModRecipe(new Recipe(
+//                "examplestaff",
+//                1,
+//                RecipeTechRegistry.WORKSTATION,
+//                new Ingredient[]{
+//                        new Ingredient("", 4),
+//                        new Ingredient("goldbar", 10)
+//                }
+//        ).showAfter("exampleitem")); // Show the recipe after example item recipe
 
         // Add out example mob to default cave mobs.
         // Spawn tables use a ticket/weight system. In general, common mobs have about 100 tickets.
-        Biome.defaultCaveMobs
-                .add(100, "examplemob");
+//        Biome.defaultCaveMobs
+//                .add(100, "examplemob");
 
     }
 
