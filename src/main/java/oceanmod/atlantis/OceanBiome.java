@@ -1,6 +1,8 @@
 package oceanmod.atlantis;
 
 import necesse.engine.registries.TileRegistry;
+import necesse.level.gameTile.GameTile;
+import necesse.level.maps.Level;
 import necesse.level.maps.biomes.Biome;
 import necesse.level.maps.biomes.FishingLootTable;
 import necesse.level.maps.biomes.MobSpawnTable;
@@ -18,7 +20,7 @@ public class OceanBiome extends Biome {
 
 
     @Override
-    public int getGenerationTerrainTileID() {return TileRegistryAtl.atlanteansandID;}
+    public int getGenerationTerrainTileID() {return TileRegistry.waterID;}
 
     @Override
     public int getGenerationCaveTileID() {return TileRegistryAtl.atlanteansandID;}
@@ -29,6 +31,11 @@ public class OceanBiome extends Biome {
     @Override
     public float getGenerationCaveRockObjectChance() {
         return 0.31f;
+    }
+
+    @Override
+    public GameTile getUnderLiquidTile(Level level, int tileX, int tileY) {
+        return TileRegistry.getTile(TileRegistryAtl.atlanteansandID);
     }
 
     @Override
