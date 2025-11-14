@@ -1,7 +1,6 @@
 package oceanmod.atlantis.objects;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.localization.Localization;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.objectEntity.ObjectEntity;
@@ -24,8 +23,8 @@ import java.util.List;
 
 import static necesse.level.gameObject.FallenIcicleObject.texture;
 
-public class OceanAltar extends GameObject {
-    public OceanAltar() {
+public class AtlanteanRunes extends GameObject {
+    public AtlanteanRunes() {
         super(new Rectangle(5, 20, 64, 64));
         hoverHitbox = new Rectangle(0, -32, 32, 64);
         toolType = ToolType.PICKAXE;
@@ -68,24 +67,24 @@ public class OceanAltar extends GameObject {
 
     @Override
     public ObjectEntity getNewObjectEntity(Level level, int x, int y) {
-        return new OceanAltarEntity(level, x, y);
+        return new AtlanteanRunesEntity(level, x, y);
     }
 
     @Override
     public Item generateNewObjectItem() {
-        return new OceanAltarItem(this);
+        return new AtlanteanRunesItem(this);
     }
 
-    public static class OceanAltarEntity extends ObjectEntity {
+    public static class AtlanteanRunesEntity extends ObjectEntity {
 
-        public OceanAltarEntity(Level level, int tileX, int tileY) {
+        public AtlanteanRunesEntity(Level level, int tileX, int tileY) {
             super(level, "atlanteanrunes", tileX, tileY);
         }
     }
 
-    public static class OceanAltarItem extends ObjectItem {
+    public static class AtlanteanRunesItem extends ObjectItem {
 
-        public OceanAltarItem(GameObject gameObject) {
+        public AtlanteanRunesItem(GameObject gameObject) {
             super(gameObject);
             rarity = Rarity.RARE;
         }
